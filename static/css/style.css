@@ -1,0 +1,171 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0b0c10, #1f2833);
+    color: #c5c6c7;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1c1f26;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+.container img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Títulos */
+h1 {
+    color: #66fcf1;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Links */
+a {
+    color: #45a29e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #66fcf1;
+    text-decoration: underline;
+}
+
+/* Listado de Avengers */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    background: #0b0c10;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+li:hover {
+    background-color: #45a29e;
+    color: #0b0c10;
+}
+
+/* Detalle de habilidades */
+ul li ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+ul li ul li {
+    background: transparent;
+    color: #c5c6c7;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid #66fcf1;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+}
+
+button {
+    background-color: #45a29e;
+    color: #0b0c10;
+    font-weight: 700;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #66fcf1;
+}
+
+/* Botón Eliminar */
+form.delete-form {
+    display: inline;
+}
+
+form.delete-form button {
+    background-color: #c0392b;
+    color: #ffffff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+form.delete-form button:hover {
+    background-color: #e74c3c;
+}
+
+/* Mensajes de error */
+p[style*="color:red"] {
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    form.delete-form {
+        margin-top: 10px;
+    }
+}

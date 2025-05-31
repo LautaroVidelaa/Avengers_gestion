@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Lista de Avengers</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/avenger listado.webp') }}" alt="">
+        <h1>Miembros de los Avengers</h1>
+        <a href="{{ url_for('avengers.add') }}">Agregar nuevo Avenger</a>
+        <ul>
+            {% for avenger in avengers %}
+            <li>
+                <a href="{{ url_for('avengers.detail', alias=avenger.alias) }}">
+                    {{ avenger.alias }} ({{ avenger.nombre }})
+                </a>
+                <form action="{{ url_for('avengers.delete', alias=avenger.alias) }}" method="POST"
+                    style="display:inline;">
+                    <button type="submit"
+                        onclick="return confirm('¿Seguro que querés eliminar a {{ avenger.alias }}?')">Eliminar</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
