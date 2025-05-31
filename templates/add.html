@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Agregar Avenger</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Agregar nuevo Avenger</h1>
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <label>Nombre:<br><input type="text" name="nombre"></label><br><br>
+            <label>Alias:<br><input type="text" name="alias"></label><br><br>
+            <label>Habilidades (separadas por coma):<br><input type="text" name="habilidades"></label><br><br>
+            <label>Actor:<br><input type="text" name="actor"></label><br><br>
+            <button type="submit">Agregar</button>
+        </form>
+        <a href="{{ url_for('avengers.index') }}">Volver al listado</a>
+    </div>
+</body>
+
+
+</html>

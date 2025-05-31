@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Detalle de {{ avenger.alias }}</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>{{ avenger.alias }} ({{ avenger.nombre }})</h1>
+        <p><strong>Actor:</strong> {{ avenger.actor }}</p>
+        <p><strong>Habilidades:</strong></p>
+        <ul>
+            {% for habilidad in avenger.habilidades %}
+            <li>{{ habilidad }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('avengers.index') }}">Volver al listado</a>
+    </div>
+
+</body>
+
+</html>
